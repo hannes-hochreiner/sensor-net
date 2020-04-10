@@ -30,7 +30,15 @@ It worked fine, but it was unstable.
 After playing around with different options and versions of the STM HAL library, I concluded that it would be easier to have a dedicated chip for the USB interface.
 
 In the [second iteration](https://github.com/hannes-hochreiner/sensor-net-gateway), I used an FTDI USB to UART bridge chip.
+The gateway receives the messages from the sensor node, adds the RSSI and outputs them over USB (UART) as JSON strings.
 
+```JSON
+{
+  "type":"rfm",
+  "rssi":"-74",
+  "data":"<encrypted message from sensor>"
+}
+```
 ### SBC
 In a first iteration, the SBC implementation was implemented using a RaspberryPi Zero W and an RFM98 break-out.
 The code to interface with the RFM98 can be found in a separate [repository](https://github.com/hannes-hochreiner/rfm98-breakout).
@@ -38,7 +46,10 @@ The code to interface with the RFM98 can be found in a separate [repository](htt
 ## Middleware
 The middleware consist of a simple ZeroMQ queue to which the data from the sensors are published as JSON documents.
 An agent subscribes to the queue and puts the messages into the repository.
-The agent can be found in a separate [repository](https://github.com/hannes-hochreiner/raw-data-db-agent).
+
+The first iteration of the middleware can be found in a separate [repository](https://github.com/hannes-hochreiner/raw-data-db-agent).
+
+In the [second iteration](https://github.com/hannes-hochreiner/sensor-net-middleware), is a re-implementation based on the second iteration of the USB gateway.
 
 ## Repository
 The repository was implemented as a PostgreSQL database.
