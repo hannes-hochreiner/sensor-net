@@ -2,11 +2,14 @@
 A sensor network for the home.
 
 ## High-level architecture
-The anticipated architecture is made up of four parts:
+The currently used architecture is made up of five parts:
   * Sensor nodes
-  * Gateways
-  * Repository
-  * Front-end
+  * Gateway
+  * Middleware
+  * Back end
+  * Front end (SPA)
+
+[System Landscape](system_landscape.svg)
 
 ## Sensor Nodes
 The sensor nodes are split into two modules: the controller including the radio and the sensor itself.
