@@ -4,10 +4,17 @@ A sensor network for the home.
 ## High-level architecture
 The currently used architecture is made up of five parts:
   * Sensor nodes
+    * [sensor-node-core](https://github.com/hannes-hochreiner/sensor-node-core)
+    * [sensor-node-bme280](https://github.com/hannes-hochreiner/sensor-node-bme280)
   * Gateway
+    * [sensor-net-gateway](https://github.com/hannes-hochreiner/sensor-net-gateway)
   * Middleware
+    * [sensor-net-middleware](https://github.com/hannes-hochreiner/sensor-net-middleware)
   * Back end
+    * [auth0-auth-server](https://github.com/hannes-hochreiner/auth0-auth-server)
+    * [sensor-net-back-end](https://github.com/hannes-hochreiner/sensor-net-back-end)
   * Front end (SPA)
+    * [sensor-net-web-app](https://github.com/hannes-hochreiner/sensor-net-web-app)
 
 ![System Landscape](system_landscape.svg)
 
@@ -54,9 +61,13 @@ The first iteration of the middleware can be found in a separate [repository](ht
 
 In the [second iteration](https://github.com/hannes-hochreiner/sensor-net-middleware), is a re-implementation based on the second iteration of the USB gateway.
 
-## Repository
-The repository was implemented as a PostgreSQL database.
-The schema can be found in the [middleware repository](https://github.com/hannes-hochreiner/raw-data-db-agent).
+## Back End
+The back end consist of a server implementing a web API and a postgres database.
+The currently used version can be found in the [back end repository](https://github.com/hannes-hochreiner/sensor-net-back-end).
 
-## Front-end
-The front-end was split into a [REST service for serving the data](https://github.com/hannes-hochreiner/sensor-net-data-api) and a [web application](https://github.com/hannes-hochreiner/sensor-net-web-app) for the visualization.
+## Front End
+The front end was built as a single page application using vue.js.
+For the visualization of the data d3 was used.
+It can be found in the [web app repository](https://github.com/hannes-hochreiner/sensor-net-web-app).
+
+A former version of a REST service for serving the data can be found in the [data api repository](https://github.com/hannes-hochreiner/sensor-net-data-api).
