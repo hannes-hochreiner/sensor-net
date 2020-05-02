@@ -9,7 +9,7 @@ The currently used architecture is made up of five parts:
   * Back end
   * Front end (SPA)
 
-[System Landscape](system_landscape.svg)
+![System Landscape](system_landscape.svg)
 
 ## Sensor Nodes
 The sensor nodes are split into two modules: the controller including the radio and the sensor itself.
