@@ -9,7 +9,7 @@ The currently used architecture is made up of five parts:
   * Gateway
     * [sensor-net-gateway](https://github.com/hannes-hochreiner/sensor-net-gateway)
   * Middleware
-    * [sensor-net-middleware](https://github.com/hannes-hochreiner/sensor-net-middleware)
+    * [sensor-net-middleware-rs](https://github.com/hannes-hochreiner/sensor-net-middleware-rs)
   * Back end
     * [auth0-auth-server](https://github.com/hannes-hochreiner/auth0-auth-server)
     * [sensor-net-back-end](https://github.com/hannes-hochreiner/sensor-net-back-end)
