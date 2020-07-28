@@ -16,6 +16,13 @@ The currently used architecture is made up of five parts:
   * Front end (SPA)
     * [sensor-net-web-app](https://github.com/hannes-hochreiner/sensor-net-web-app)
 
+## System Landscape
+
+The nodes in the diagram represent single programs or hardware modules.
+The groups - indicated by the fuzzy rectangles - represent devices or services.
+All components in red-ish/purple hues are custom developments.
+Components in blue-ish/teal hues are commercial of the shelf.
+
 ![System Landscape](system_landscape.svg)
 
 ## Sensor Nodes
