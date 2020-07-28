@@ -1,0 +1,66 @@
+blockdiag {
+  class group_cots [color = "#739FAD"];
+  class group_own [color = "#C46375"];
+  class node_cots [color = "#E8D7FF"];
+  class node_own [color = "#E4C5AF"];
+
+  group {
+    orientation = portrait;
+    label="Sensor Node";
+    class="group_own";
+  
+    SNB [class="node_own", label="Sensor Node BME-280"];
+    SNC [class="node_own", label="Sensor Node Core"];
+
+    SNB <-> SNC [label="I2C", fontsize = 5];
+  }
+
+  group {
+    label="Gateway";
+    class="group_own";
+
+    GW [class="node_own", label="Gateway"];
+  }
+
+  group {
+    label="Raspberry Pi";
+    class="group_cots";
+
+    SNM [class="node_own", label="Sensor-Net-Middleware"];
+  }
+
+  group {
+    label="Digital Ocean";
+    class="group_cots";
+
+    TRF [class="node_cots", label="Traefik"];
+    AUTH [class="node_own", label="Auth0-Auth-Server"];
+    BE [class="node_own", label="Sensor-Net-Back-End"];
+    PG [class="node_cots", label="Postgres"];
+    WA [class="node_own", label="Sensor-Net-Web-App"];
+  }
+
+  group {
+    label="Auth0";
+    class="group_cots";
+
+    A0 [class="node_cots", label="Sensor Net Tenant"];
+  }
+
+  group {
+    label="Devices";
+    class="group_cots";
+
+    CD [class="node_cots", label="Consumer Devices"];
+  }
+
+  SNC -> GW [label="LoRa @ 434 MHz", fontsize = 5];
+  GW -> SNM [label="serial over USB", fontsize = 5, folded];
+  SNM -> TRF;
+  TRF <-> AUTH;
+  TRF <-> BE <-> PG;
+  TRF <-> WA;
+  SNM <-> A0;
+  TRF <-> CD [folded];
+  A0 <-> CD;
+}
