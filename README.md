@@ -59,7 +59,9 @@ An agent subscribes to the queue and puts the messages into the repository.
 
 The first iteration of the middleware can be found in a separate [repository](https://github.com/hannes-hochreiner/raw-data-db-agent).
 
-In the [second iteration](https://github.com/hannes-hochreiner/sensor-net-middleware), is a re-implementation based on the second iteration of the USB gateway.
+In the [second iteration](https://github.com/hannes-hochreiner/sensor-net-middleware-js), is a re-implementation based on the second iteration of the USB gateway.
+
+The [third iteration](https://github.com/hannes-hochreiner/sensor-net-middleware-rs) is a re-implementation of the functionality of the second iteration in Rust.
 
 ## Back End
 The back end consist of a server implementing a web API and a postgres database.
