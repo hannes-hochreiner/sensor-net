@@ -8,6 +8,7 @@ The currently used architecture is made up of five parts:
     * [sensor-node-bme280](https://github.com/hannes-hochreiner/sensor-node-bme280)
   * Gateway
     * [sensor-net-gateway](https://github.com/hannes-hochreiner/sensor-net-gateway)
+    * [sensor-net-gateway-bl651](https://github.com/hannes-hochreiner/sensor-net-gateway-bl651)
   * Middleware
     * [sensor-net-middleware-rs](https://github.com/hannes-hochreiner/sensor-net-middleware-rs)
   * Back end
@@ -56,6 +57,11 @@ The gateway receives the messages from the sensor node, adds the RSSI and output
   "data":"<encrypted message from sensor>"
 }
 ```
+
+The [third generation](https://github.com/hannes-hochreiner/sensor-net-gateway-bl651) of the gateway it built around the Laird BL651 module.
+Therefore, it operates in the 2.4-2.5 GHz region as opposed to the former gateways operating at 434 MHz.
+It uses the same FTDI USB to UART bridge chip as the second generation.
+
 ### SBC
 In a first iteration, the SBC implementation was implemented using a RaspberryPi Zero W and an RFM98 break-out.
 The code to interface with the RFM98 can be found in a separate [repository](https://github.com/hannes-hochreiner/rfm98-breakout).
